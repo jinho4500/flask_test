@@ -19,7 +19,7 @@ def home():
 @app.route('/auth/users/login')
 def login():
     return "login page"
-
+    
 @app.route('/auth/users/signup')
 def signup():
     return "signup page"
