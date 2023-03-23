@@ -1,11 +1,10 @@
-# 홈페이지 작성, 디버깅모드, 포트 5000번, 홈페이지는 화면에 Helloworld만 출력
 
+# 홈페이지 작성, 디버깅모드, 포트 5000번, 홈페이지는 화면에 "Helloworld"만 출력
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 
 app = Flask(__name__)
 
-
-@ app.route('/')
+@app.route('/')
 def home():
     return "helloworld"
 
