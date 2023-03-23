@@ -36,7 +36,7 @@ app = Flask(__name__)
 def login():
     # method별 분기
     if request.method =='GET':
-        return "helloworld"
+        return render_template('login.html')
     else: # post
         # request.form['uid'] # 값이 누락되면 서버 셧다운됨, 사용금지
         # 1.로그인 정보 획득
@@ -49,5 +49,4 @@ def login():
             # 3-2. 서비스 메인 화면으로 이동
         # 4.회원아니면
             # 4-1. 적당한 메세지후 다시 로그인 유도
-
         return redirect('https://www.naver.com') # 요청을 다른 url로 포워딩한다
