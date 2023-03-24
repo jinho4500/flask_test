@@ -4,7 +4,7 @@
         - sql수행
             - basic에서 수행
             - pymysql 패키지 사용
-                -
+                - https://github.com
         
         - orm수행
             - advance에서 수행
@@ -26,7 +26,20 @@
     4. 현재 작업할 데이터베이스 지정
        Maria [(none)] > use ml_db;
        Database changed
-       MariaDB [ml_db]>
+       MariaDB [ml_db]> show tables;
+
+    5. 고객테이블 생성
+      # USING BTREE : 검색 속도를 높이는 방식중에 하나로 특정 컬럼을 지정
+       CREATE TABLE 'users'
+       (
+         
+       )
+       COMMENT='고객 테이블'
+       COLLATE='utf8mb4_general_ci'
+       ENGINE=InnoDB
+       ;
 '''
 
 import pymysql as my
+
+
