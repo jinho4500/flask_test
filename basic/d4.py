@@ -24,9 +24,9 @@ try:
             AND
                 upw='1234';
         '''
-        cursor.execute( sql )
+        # execute() 함수의 2번 인자가 파라미터 전달하는 자리, 튜플로 표현
+        cursor.execute( sql,('guest','1234') )
         row = cursor.fetchone()
-        # 5. 결과확인 -> 딕셔너리 -> 이름만 추출하시오 -> '게스트'
         print( row['name'] )
         pass
 except Exception as e:
