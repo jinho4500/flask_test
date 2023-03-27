@@ -26,10 +26,17 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 
 app = Flask(__name__)
+# 세션을 위해서 시크릿키 지정
+app.secret_key = 'serlifgjeriofjweofijweok' #임의값, 통상 해시값 활용
 
-#  @app.route() => 기본적으로 GET 방식
-# 메소드 추가는 => methods=['POST', ...]
-@app.route('/login', methods=['POST', 'GET'])
+# 로그인을 하여 세션을 얻은후 홈페이지를 진행해야 사이트의 내용을 보여주겠다 => 컨셉
+@app.route('/')
+def home():
+    if not 'uid' in session:
+        #
+        #
+        return redirect(url_for('login'))
+        
 def login():
     # method별 분기
     if request.method == 'GET':
